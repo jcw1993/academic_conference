@@ -8,7 +8,7 @@
 			<div class="col-xs-10">
 				<h4 class="line-bottom">参会注册</h4>
 				<div class="content">
-		         <form id="register-form" class="form-horizontal">
+		         <form id="register-form" class="form-horizontal" method="post">
 
 	 		         <div class="form-group">
 				        <label for="name" class="col-sm-2 control-label">姓名</label>
@@ -20,8 +20,8 @@
  	 		         <div class="form-group">
 				        <label for="gender" class="col-sm-2 control-label">性别</label>
 				        <div class="col-sm-10">
-				            男<input type="radio" name="gender" value="male" checked="checked" />
-				            女<input type="radio" name="gender" value="female" />
+				            <input type="radio" name="gender" value="male" checked="checked" />男
+				            <input type="radio" name="gender" value="female" />女
 				        </div>
 			         </div>
 
@@ -56,10 +56,10 @@
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">住宿方式</label>
 				        <div class="col-sm-10">
-     			            单人间<input type="radio" name="gender" value="0" checked="checked" />约￥350 独住<br/>
-	     		            双人间（整间）<input type="radio" name="gender" value="1" />约￥350 独住<br/>
-	     		            双人间（拼房）<input type="radio" name="gender" value="2" />约￥175 合住<br/>
-	     		            不住宿<input type="radio" name="gender" value="3" />
+     			            <input type="radio" name="room_fee" value="0" checked="checked" />单人间  约￥350 独住<br/>
+	     		            <input type="radio" name="room_fee" value="1" />双人间（整间） 约￥350 独住<br/>
+	     		            <input type="radio" name="room_fee" value="2" />双人间（拼房） 约￥175 合住<br/>
+	     		            <input type="radio" name="room_fee" value="3" />不住宿
 				        </div>
 			         </div>			         
 
@@ -101,25 +101,24 @@
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">发票项目</label>
 				        <div class="col-sm-10">
-				            会务费<input type="radio" name="fee" value="0" checked="checked" />
-				            会议费<input type="radio" name="fee" value="1" />
-				            培训费<input type="radio" name="fee" value="2" />
+				            <input type="radio" name="fee" value="0" checked="checked" />会务费
+				            <input type="radio" name="fee" value="1" />会议费
+				            <input type="radio" name="fee" value="2" />培训费
 				        </div>
 			         </div>
 
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">发票金额</label>
 				        <div class="col-sm-10">
-     	         			￥850.00（银行汇款）<input type="radio" name="fee" value="0" checked="checked" />
-     	         			￥900.00（现场缴纳）<input type="radio" name="fee" value="1" />
+     	         			<input type="radio" name="fee" value="0" checked="checked" />￥850.00（银行汇款）
+     	         			<input type="radio" name="fee" value="1" />￥900.00（现场缴纳）
 				        </div>
 			         </div>		
 
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">备注信息</label>
 				        <div class="col-sm-10">
-     	         			<textarea rows="3" cols="20">
-     	         			</textarea>
+     	         			<textarea rows="3" cols="20"></textarea>
 				        </div>
 			         </div>					                  
 		         </form>

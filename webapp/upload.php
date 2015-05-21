@@ -8,7 +8,7 @@
 			<div class="col-xs-10">
 				<h4 class="line-bottom">在线投稿</h4>
 				<div class="content">
-		         <form id="upload-form" class="form-horizontal">
+		         <form id="upload-form" class="form-horizontal" method="post">
       		         <div class="form-group">
      			        <label for="title" class="col-sm-2 control-label">论文题目</label>
      			        <div class="col-sm-10">
@@ -19,17 +19,23 @@
       		         <div class="form-group">
      			        <label for="keyword" class="col-sm-2 control-label">关键词</label>
      			        <div class="col-sm-10">
-     			            <input type="text" class="form-control" id="keyword" placeholder="关键词" />
+     			            <input type="text" class="form-control" id="keyword" placeholder="多个关键词请以“、”分隔" />
      			        </div>
      		         </div>
 
       		         <div class="form-group">
      			        <label for="summary" class="col-sm-2 control-label">论文摘要</label>
      			        <div class="col-sm-10">
-		         			<textarea id="summary" rows="3" cols="20">
-		         			</textarea>
+		         			<textarea id="summary" rows="3" cols="20"></textarea>
      			        </div>
      		         </div>
+
+      		         <div class="form-group">
+     			        <label for="author" class="col-sm-2 control-label">作者</label>
+     			        <div class="col-sm-10">
+     			            <input type="text" class="form-control" id="author" placeholder="多位作者请以“、”分隔" />
+     			        </div>
+     		         </div>     		         
 
       		         <div class="form-group">
      			        <label for="organization" class="col-sm-2 control-label">单位名称</label>
@@ -66,12 +72,19 @@
      			        </div>
      		         </div>     
 
+      		         <div class="form-group">
+     			        <label class="col-sm-2 control-label">上传附件</label>
+     			        <div class="col-sm-10">
+     			            <input type="file" name="user_file" size="15" enctype="multipart/form-data" maxlength="100" />
+     			        </div>
+     		         </div>     
+
      		         <div class="form-group">
      		        	<div class="col-sm-2"></div>
      		         	<div class="col-sm-2">
      		         		<a href="#fakelink" class="btn btn-block btn-lg btn-primary">提交论文</a>
      		         	</div>
-     		         	<a href="#">提交记录</a>
+     		         	<div class="col-sm-2 padding-top-little"><a href="#">提交记录</a></div>
      		         </div> 		              		              		              		                       		              		              		     
 		         </form>
 
