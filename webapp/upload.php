@@ -35,7 +35,17 @@
      			        <div class="col-sm-10">
      			            <input type="text" class="form-control" id="author" placeholder="多位作者请以“、”分隔" />
      			        </div>
-     		         </div>     		         
+     		         </div>   
+
+      		         <div class="form-group">
+     			        <label class="col-sm-2 control-label">报告类型</label>
+     			        <div class="col-sm-2">
+				            <input type="radio" name="report_type" value="" checked="checked" />海报
+     			        </div>
+     			        <div class="col-sm-2">
+				            <input type="radio" name="report_type" value="" />口头报告
+     			        </div>
+     		         </div>         		           		         
 
       		         <div class="form-group">
      			        <label for="organization" class="col-sm-2 control-label">单位名称</label>

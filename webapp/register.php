@@ -19,9 +19,11 @@
 
  	 		         <div class="form-group">
 				        <label for="gender" class="col-sm-2 control-label">性别</label>
-				        <div class="col-sm-10">
+				        <div class="col-sm-1">
 				            <input type="radio" name="gender" value="male" checked="checked" />男
-				            <input type="radio" name="gender" value="female" />女
+				        </div>
+				        <div class="col-sm-1">
+				            <input type="radio" name="gender" value="female" />女				        	
 				        </div>
 			         </div>
 
@@ -56,10 +58,35 @@
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">住宿方式</label>
 				        <div class="col-sm-10">
-     			            <input type="radio" name="room_fee" value="0" checked="checked" />单人间  约￥350 独住<br/>
-	     		            <input type="radio" name="room_fee" value="1" />双人间（整间） 约￥350 独住<br/>
-	     		            <input type="radio" name="room_fee" value="2" />双人间（拼房） 约￥175 合住<br/>
-	     		            <input type="radio" name="room_fee" value="3" />不住宿
+					        <div class="row">
+					        	<div class="col-sm-4">
+					        		<input type="radio" name="room_fee" value="0" checked="checked" />单人间 
+					        	</div>
+					        	<div class="col-sm-4">
+					        		约￥350 独住				        	
+					        	</div>
+				        	</div>
+     			            <div class="row">
+     			            	<div class="col-sm-4">
+     			            		<input type="radio" name="room_fee" value="1" />双人间（整间）
+     			            	</div>
+     			            	<div class="col-sm-4">
+     			            		约￥350 独住
+     			            	</div>
+     			            </div>
+	     		            <div class="row">
+	     		            	<div class="col-sm-4">
+	     		            		<input type="radio" name="room_fee" value="2" />双人间（拼房）
+	     		            	</div>
+	     		            	<div class="col-sm-4">
+	     		            		约￥175 合住
+	     		            	</div>
+	     		            </div>
+	     		            <div class="row">
+		     		            <div class="col-xs-4">
+		     		            	<input type="radio" name="room_fee" value="3" />不住宿
+		     		            </div>
+	     		            </div>
 				        </div>
 			         </div>			         
 
@@ -100,11 +127,9 @@
 
 	 		         <div class="form-group">
 				        <label class="col-sm-2 control-label">发票项目</label>
-				        <div class="col-sm-10">
-				            <input type="radio" name="fee" value="0" checked="checked" />会务费
-				            <input type="radio" name="fee" value="1" />会议费
-				            <input type="radio" name="fee" value="2" />培训费
-				        </div>
+				        <div class="col-sm-2"><input type="radio" name="fee" value="0" checked="checked" />会务费</div>
+				        <div class="col-sm-2"><input type="radio" name="fee" value="1" />会议费</div>
+				        <div class="col-sm-2"><input type="radio" name="fee" value="2" />培训费</div>
 			         </div>
 
 	 		         <div class="form-group">
