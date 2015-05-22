@@ -40,10 +40,10 @@
       		         <div class="form-group">
      			        <label class="col-sm-2 control-label">报告类型</label>
      			        <div class="col-sm-2">
-				            <input type="radio" name="report_type" value="" checked="checked" />海报
+				            <input type="radio" name="report_type" value="" checked="checked" /> 海报
      			        </div>
      			        <div class="col-sm-2">
-				            <input type="radio" name="report_type" value="" />口头报告
+				            <input type="radio" name="report_type" value="" /> 口头报告
      			        </div>
      		         </div>         		           		         
 

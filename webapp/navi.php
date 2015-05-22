@@ -1,23 +1,24 @@
 <nav class="navbar navbar-default navbar-fixed-top" style="">
 	<div class="container-fluid nav-container">
 		<div class="row line-bottom">
+			<div class="col-xs-1"></div>
 			<div class="col-xs-2">
-				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="Login"> 
+
+					<a class="navbar-brand" href="http://www.cs-re.org.cn"> <img
+						alt="中国稀土学会" class="logo"
+						src="/resources/images/cs_re_logo.png">
+					</a>					
+					<a class="navbar-brand" href="http://www.nju.edu.cn"> <img
+						alt="南京大学" class="logo"
+						src="/resources/images/nju_logo.png">
 					</a>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-5 padding-top-little">
 				<p class="nav-title">第二十届全国稀土催化学术会议</p>
 				<p class="nav-sub-title">Educational Equipment City Form for Cooperation and Development</p>
-				<p class="nav-sub-title">2015年8月7-9日</p>
+				<p class="nav-sub-title">2015年8月7-9日 南京</p>
 			</div>
 			<div class="col-xs-4">
 				<div class="row nav-top-right">

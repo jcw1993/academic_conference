@@ -3,6 +3,7 @@
 body {
 	font-family: "微软雅黑";
 	font-size: 14px;
+	background-color: #eeeeee;
 }
 
 a {
@@ -49,14 +50,48 @@ p.nav-sub-title {
 	font-size: 0.6em;
 }
 
+p.news-title {
+	font-size: 1.2em;
+}
+
 .nav-top-right {
 	padding-top: 2em;
 
 }
 
+.logo {
+	width: 60px;
+	height: 60px;
+/*	position: absolute;
+	left: 10px;
+	top: 0;
+}*/
+}
+
 .padding-top-little {
 	padding-top: 1.5em;
 }
+
+.banner-area {
+	width: 100%;
+	text-align: center;
+}
+
+img.banner {
+	width: 100%;
+	height: auto;
+	max-height: 400px;
+	overflow-x: hidden;
+}
+
+div.introduction {
+	background-color: #ffffff;
+	height: 200px;
+	min-height: 200px;
+	max-height: 200px;
+	padding: 1em;
+}
+
 
 /*override falt-ui css*/
 input, .uneditable-input {
