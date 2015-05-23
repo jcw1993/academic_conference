@@ -3,9 +3,8 @@
 <body>
 	<?php include_once("navi.php"); ?>
 	<div class="container-body">
-		<div class="row"></div>
-			<div class="col-xs-2"></div>
-			<div class="col-xs-10">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-11">
 				<h4 class="line-bottom">参会注册</h4>
 				<div class="content">
 		         <form id="register-form" class="form-horizontal" method="post">

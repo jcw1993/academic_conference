@@ -17,11 +17,11 @@
 			<div class="col-xs-6">
 				<div class="introduction">
 					<p class="news-title">新闻动态</p>
-					<div class="news-item">新闻1</div>
-					<div class="news-item">新闻2</div>
-					<div class="news-item">新闻3</div>
-					<div class="news-item">新闻4</div>
-					<div class="news-item">新闻5</div>
+					<div class="news-item"><a href="news_detail.php">新闻一</a></div>
+					<div class="news-item"><a href="news_detail.php">新闻二</a></div>
+					<div class="news-item"><a href="news_detail.php">新闻三</a></div>
+					<div class="news-item"><a href="news_detail.php">新闻四</a></div>
+					<div class="news-item"><a href="news_detail.php">新闻五</a></div>
 				</div>
 			</div>
 		</div>
