@@ -27,6 +27,8 @@
 	src="/resources/js/jquery.timepicker.js"></script>	
 <script type="text/javascript"
 	src="/resources/js/flat-ui.min.js"></script>
+<script type="text/javascript"
+	src="/resources/js/main.js"></script>	
 
 <title>第二十届全国稀土催化学术会议</title>
 </head>

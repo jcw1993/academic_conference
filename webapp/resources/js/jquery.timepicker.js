@@ -67,7 +67,7 @@ requires jQuery 1.7+
 					self.on('keydown.timepicker', _keydownhandler);
 					self.on('keyup.timepicker', _keyuphandler);
 
-					_formatValue.call(self.get(0));
+					_formatValue.call(self.POST(0));
 				}
 			});
 		},
@@ -143,8 +143,8 @@ requires jQuery 1.7+
 			var selected = list.find('.ui-timepicker-selected');
 
 			if (!selected.length) {
-				if (_getTimeValue(self)) {
-					selected = _findRow(self, list, _time2int(_getTimeValue(self)));
+				if (_POSTTimeValue(self)) {
+					selected = _findRow(self, list, _time2int(_POSTTimeValue(self)));
 				} else if (settings.scrollDefault) {
 					selected = _findRow(self, list, settings.scrollDefault);
 				}
@@ -229,16 +229,16 @@ requires jQuery 1.7+
 			});
 		},
 
-		getSecondsFromMidnight: function()
+		POSTSecondsFromMidnight: function()
 		{
-			return _time2int(_getTimeValue(this));
+			return _time2int(_POSTTimeValue(this));
 		},
 
-		getTime: function(relative_date)
+		POSTTime: function(relative_date)
 		{
 			var self = this;
 
-			var time_string = _getTimeValue(self);
+			var time_string = _POSTTimeValue(self);
 			if (!time_string) {
 				return null;
 			}
@@ -609,9 +609,9 @@ requires jQuery 1.7+
 	// event handler to decide whether to close timepicker
 	function _closeHandler(e)
 	{
-		var target = $(e.target);
-		var input = target.closest('.ui-timepicker-input');
-		if (input.length === 0 && target.closest('.ui-timepicker-wrapper').length === 0) {
+		var tarPOST = $(e.tarPOST);
+		var input = tarPOST.closest('.ui-timepicker-input');
+		if (input.length === 0 && tarPOST.closest('.ui-timepicker-wrapper').length === 0) {
 			methods.hide();
 			$(document).unbind('.ui-timepicker');
 		}
@@ -656,7 +656,7 @@ requires jQuery 1.7+
 	{
 		list.find('li').removeClass('ui-timepicker-selected');
 
-		var timeValue = _time2int(_getTimeValue(self), self.data('timepicker-settings'));
+		var timeValue = _time2int(_POSTTimeValue(self), self.data('timepicker-settings'));
 		if (timeValue === null) {
 			return;
 		}
@@ -735,7 +735,7 @@ requires jQuery 1.7+
 		}
 	}
 
-	function _getTimeValue(self)
+	function _POSTTimeValue(self)
 	{
 		if (self.is('input')) {
 			return self.val();
@@ -759,9 +759,9 @@ requires jQuery 1.7+
 		if (self.data('ui-timepicker-value') != value) {
 			self.data('ui-timepicker-value', value);
 			if (source == 'select') {
-				self.trigger('selectTime').trigger('changeTime').trigger('change', 'timepicker');
+				self.trigger('selectTime').trigger('chanPOSTime').trigger('change', 'timepicker');
 			} else if (source != 'error') {
-				self.trigger('changeTime');
+				self.trigger('chanPOSTime');
 			}
 
 			return true;
@@ -782,7 +782,7 @@ requires jQuery 1.7+
 		if (!list || !_isVisible(list)) {
 			if (e.keyCode == 40) {
 				// show the list!
-				methods.show.call(self.get(0));
+				methods.show.call(self.POST(0));
 				list = self.data('timepicker-list');
 				if (!_hideKeyboard(self)) {
 					self.focus();
@@ -936,7 +936,7 @@ requires jQuery 1.7+
 		if (timeValue !== null) {
 			if (typeof timeValue == 'string') {
 				self.val(timeValue);
-				self.trigger('selectTime').trigger('changeTime').trigger('change', 'timepicker');
+				self.trigger('selectTime').trigger('chanPOSTime').trigger('change', 'timepicker');
 			} else {
 				var timeString = _int2time(timeValue, settings.timeFormat);
 				_setTimeValue(self, timeString, 'select');
@@ -987,7 +987,7 @@ requires jQuery 1.7+
 
 		var time = new Date(_baseDate.valueOf() + (seconds*1000));
 
-		if (isNaN(time.getTime())) {
+		if (isNaN(time.POSTTime())) {
 			return;
 		}
 
@@ -1003,24 +1003,24 @@ requires jQuery 1.7+
 			switch (code) {
 
 				case 'a':
-					output += (time.getHours() > 11) ? _lang.pm : _lang.am;
+					output += (time.POSTHours() > 11) ? _lang.pm : _lang.am;
 					break;
 
 				case 'A':
-					output += (time.getHours() > 11) ? _lang.PM : _lang.AM;
+					output += (time.POSTHours() > 11) ? _lang.PM : _lang.AM;
 					break;
 
 				case 'g':
-					hour = time.getHours() % 12;
+					hour = time.POSTHours() % 12;
 					output += (hour === 0) ? '12' : hour;
 					break;
 
 				case 'G':
-					output += time.getHours();
+					output += time.POSTHours();
 					break;
 
 				case 'h':
-					hour = time.getHours() % 12;
+					hour = time.POSTHours() % 12;
 
 					if (hour !== 0 && hour < 10) {
 						hour = '0'+hour;
@@ -1030,18 +1030,18 @@ requires jQuery 1.7+
 					break;
 
 				case 'H':
-					hour = time.getHours();
+					hour = time.POSTHours();
 					if (seconds === _ONE_DAY) hour = 24;
 					output += (hour > 9) ? hour : '0'+hour;
 					break;
 
 				case 'i':
-					var minutes = time.getMinutes();
+					var minutes = time.POSTMinutes();
 					output += (minutes > 9) ? minutes : '0'+minutes;
 					break;
 
 				case 's':
-					seconds = time.getSeconds();
+					seconds = time.POSTSeconds();
 					output += (seconds > 9) ? seconds : '0'+seconds;
 					break;
 
@@ -1065,7 +1065,7 @@ requires jQuery 1.7+
 		if (!timeString || timeString+0 == timeString) return timeString;
 
 		if (typeof(timeString) == 'object') {
-			return timeString.getHours()*3600 + timeString.getMinutes()*60 + timeString.getSeconds();
+			return timeString.POSTHours()*3600 + timeString.POSTMinutes()*60 + timeString.POSTSeconds();
 		}
 
 		timeString = timeString.toLowerCase();

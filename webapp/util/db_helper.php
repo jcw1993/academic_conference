@@ -19,12 +19,12 @@ class DBHelper{
 	}
 
 	function connect() {
-		$this->connection = mysql_connect("127.0.0.1", "devuser", "qyff2011");
-		// $this->connection = mysql_connect($this->host, $this->user, $this->password);
+		$this->connection = mysql_connect($this->host, $this->user, $this->password);
 		if(!$this->connection) {
 			die('could not connect: ' . mysql_error());
 		}
 		mysql_select_db($this->database, $this->connection);
+		mysql_query("set names utf8");
 	}
 
 	function select_database($database) {
@@ -48,20 +48,20 @@ class DBHelper{
 
 }
 
-function test() {
-	echo "start test\n";
-	$dbHelper = new DBHelper("127.0.0.1", 3306, "devuser", "qyff2011", "dev_test");
-	$result = $dbHelper->execute_query("select * from user");
-
-	while($row = mysql_fetch_array($result)) {
-	  	echo $row['id'] . " " . $row['name'];
-		echo "<br />";
-	}
-
-	echo "end test\n";
-
+function DBHelperInstance() {
+	$mysql_config = parse_ini_file(dirname(dirname(__FILE__))."/config/db_config.ini");
+	$host = $mysql_config["host"];
+	$port = $mysql_config["port"];
+	$user = $mysql_config["user"];
+	$password = $mysql_config["password"];
+	$database = $mysql_config["database"];
+	// $host = "127.0.0.1";
+	// $port = 3306;
+	// $user = "devuser";
+	// $password = "qyff2011";
+	// $database = "recc";
+	$dbHelper = new DBHelper($host, $port, $user, $password, $database);
+	return $dbHelper;
 }
-
-test();
 
 ?>

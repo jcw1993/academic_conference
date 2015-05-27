@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <nav class="navbar navbar-default navbar-fixed-top" style="">
 	<div class="container-fluid nav-container">
 		<div class="row line-bottom">
@@ -25,7 +29,14 @@
 						<a href="register.php">参会注册</a>
 					</div>
 					<div class="col-sm-3">
-						<a href="#">联系我们</a>
+						<?php 
+							if($_SESSION["memberId"] == null) {
+								echo '<a href="login.php">登录</a>';
+							}else {
+								echo '<a href="logout.php">退出</a>';
+							}
+						?>
+						
 					</div>
 				</div>
 			</div>			
@@ -36,15 +47,20 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav" style="width: 100%">
-						<li><a href="home.php">首页</a></li>
+						<li><a href="index.php">首页</a></li>
 						<li><a href="summary.php">会议概况</a></li>
 						<li><a href="organization.php">组织机构</a></li>
 						<li><a href="academic_committee.php">学术委员会</a></li>
 						<li><a href="organizing_committee.php">组织委员会</a></li>
 						<li><a href="schedule.php">会议日程</a></li>
-						<li><a href="upload.php">在线投稿</a></li>
+						<?php 
+						if($_SESSION["memberId"] != null) {
+							echo '<li><a href="upload.php">在线投稿</a></li>';
+						} 
+						?>
 						<li><a href="download.php">相关下载</a></li>
 						<li><a href="guide.php">参会指南</a></li>
+						<li><a href="contact.php">联系我们</a></li>
 					</ul>
 				</div>
 			</div>
@@ -53,4 +69,8 @@
 	</div>
 	<!-- /.container-fluid -->
 </nav>
+
+<?php 
+	session_write_close();
+?>
 
